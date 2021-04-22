@@ -1,0 +1,286 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+body {
+    background-color: #f5f5f5;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+@mixin logo {
+    width: 275px;
+    height: 17px;
+    text-transform: uppercase;
+    color: #ffff;
+        .logo_bold {
+            font-weight: bold;
+        }
+}
+@mixin name_block {
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 120px;
+    font-size: 24px;
+}
+.conteiner_header_bg {
+    background-color: #5f6d92;
+    width: 100%;
+    padding: 15px 0;
+    .conteiner_header_content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 1200px;
+        margin: 0 auto;
+        color: #ffff;
+        justify-content: space-around;
+        .logo {
+            @include logo;
+        }
+        .search {
+            width: 375px;
+            height: 40px;
+            border-radius: 3px;
+            border: 0;
+            padding-left: 10px;
+        }
+        .lang {
+            width: 175px;
+            height: 15px;
+            .lang_uk, .lang_en, .lang_ru {
+                display: inline-block;
+                cursor: pointer;
+                &::after {
+                    content: '|';
+                    padding-left: 5px;
+                }
+            }
+            .lang_ru {
+                cursor: pointer;
+                &::after {
+                    content: '';
+                }
+            }
+        }
+        .log {
+            width: 175px;
+            height: 18px;
+            color: #ffff;
+            .fa-user {
+                margin-right: 10px;
+                
+            }
+        }
+        .shopping {
+            position: relative;
+            .fa-shopping-cart {
+                width: 30px;
+                height: 30px;
+                font-size: 30px;
+                cursor: pointer;
+            }
+            .shop_num {
+                width: 20px;
+                height: 20px;
+                background-color: #ffff;
+                border-radius: 50%;
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                color: black;
+                border: 1px solid rgb(43, 0, 255);
+                text-align: center;
+            }
+        }
+    }
+    
+}
+.nav {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid grey;
+    background-color: #ffff;
+    .checkbox3 {
+        display: none;
+    }
+    ul {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    ul > li {
+        display: inline-block;
+        padding: 20px 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .shop {
+        .fa-chevron-down {
+            margin-left: 10px;
+        }
+        &:hover .fa-chevron-down {
+            transform: rotate(180deg);
+            transition: 1s ease all;
+        }
+        &:hover ~ .hover_menu_conteiner {
+            transition: 1s ease all;
+            max-height: 450px;
+            
+        }
+    }
+    .hover_menu_conteiner {
+        z-index: 2;
+        text-transform: uppercase;
+        position: absolute;
+        top: 60px;
+        width: 1200px;
+        margin: 0 auto;
+        left: 0 ;
+        transition: 0.3s ease all;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #ffff;
+        .block {
+            width: 1200px;
+            margin: 0 auto;
+            top: 40px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            .hover_menu_content {
+                width: 375px;
+                margin-right: 100px;
+                a {
+                    display: block;
+                    padding-left: 10px;
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                }
+            }
+            .product {
+                margin: 0;
+                display: flex;
+                .product_item {
+                    width: 235px;
+                    margin-right: 20px; 
+                    cursor: pointer;
+                    .name_product {
+                        text-align: center;
+                        vertical-align: bottom;
+                        margin-top: 300px;
+                        margin-bottom: 20px;
+                    }
+                    .price {
+                        text-align: center;
+                        margin-bottom: 20px;
+                    }
+                }
+                .promo_item_1 {
+                    background-image: url(../img/watch/apple-watch-series-6-40mm-product-red-aluminium-case-with-product-red-sport-band-desktop-detail-2-Format-488.png);
+                    background-size: 70%;
+                    background-position: 30px 50px;
+                    background-repeat: no-repeat;
+                    margin-bottom: 20px;
+                    &:hover {
+                        background-image: url(../img/watch/apple_watch_m00m3_1.png);
+                        box-shadow: -1px 1px 14px 3px #bababa;
+                    }
+                }
+                .promo_item_2 {
+                    background-image: url(../img/watch/wnike.jpg);
+                    background-size: 70%;
+                    background-position: 30px 50px;
+                    background-repeat: no-repeat;
+                    margin-bottom: 20px;
+                    &:hover {
+                        background-image: url(../img/watch/wnike2.jpg);
+                        box-shadow: -1px 1px 14px 3px #bababa;
+                    }
+                }
+                .promo_item_3 {
+                    background-image: url(../img/watch/blue2.jpeg);
+                    background-size: 70%;
+                    background-position: 30px 50px;
+                    background-repeat: no-repeat;
+                    margin-bottom: 20px;
+                    &:hover {
+                        background-image: url(../img/watch/blue1.jpg);
+                        box-shadow: -1px 1px 14px 3px #bababa;
+                        // background-size: 50%;
+                    }
+                }
+                .promo_item_4 {
+                    background-image: url(../img/watch/amazifft.jpg);
+                    background-size: 70%;
+                    background-position: 30px 50px;
+                    background-repeat: no-repeat;
+                    margin-bottom: 20px;
+                    &:hover {
+                        background-image: url(../img/watch/amazifft2.jpg);
+                        box-shadow: -1px 1px 14px 3px #bababa;
+                        // background-size: 50%;
+                    }
+                }
+        
+                
+            }
+        
+        }
+        &:hover {
+            max-height: 450px;
+        }
+    }
+   
+    .burg_menu {
+        position: fixed;
+        height: 100%;
+        background-color: #ffff;
+        width: 35%;
+        top: 0;
+        left: -100%;
+        z-index: 1;
+        transition: ease 1s;
+        
+        .name_menu_burg, .lang_menu_burg {
+            padding: 20px;
+            width: 100%;
+            height: 10%;
+            background-color: rgb(238, 238, 238);
+            margin: 0;
+            
+        }
+        ul {
+            width: 100%;
+        }
+        ul > li {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid rgb(239, 239, 239);
+        }
+    }
+    .checkbox3:checked ~ .burg_menu {
+        left: 0;
+        transition: ease 1s;
+    }
+    
+}
+.navigation {
+    width: 100%;
+    border-bottom: 1px solid #fff;
+    .navigation_in {
+        width: 1200px;
+        margin: 0 auto;
+    }
+}

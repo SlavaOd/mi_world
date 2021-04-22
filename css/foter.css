@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.footer {
+  border-top: 1px solid grey;
+  padding-top: 20px;
+}
+.footer .logo {
+  width: 275px;
+  height: 17px;
+  text-transform: uppercase;
+  color: #ffff;
+  color: #5f6d92;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.footer .logo .logo_bold {
+  font-weight: bold;
+}
+.footer .logo_foot, .footer .tel, .footer .mail, .footer .soc_text, .footer .pay_text, .footer .year {
+  text-align: center;
+  display: block;
+  margin-bottom: 10px;
+}
+.footer .soc {
+  width: 245px;
+  margin: 0 auto 20px auto;
+}
+.footer .soc a {
+  color: #5f6d92;
+}
+.footer .soc .fab {
+  font-size: 40px;
+}
+.footer .pay_card {
+  width: 95px;
+  color: #5f6d92;
+  margin: 0 auto 20px auto;
+}
+.footer .pay_card .fab {
+  font-size: 40px;
+}

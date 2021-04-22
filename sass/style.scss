@@ -1,0 +1,965 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+body {
+    background-color: #f5f5f5;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+ul {
+    padding: 0;
+}
+li {
+    list-style: none;
+}
+@mixin logo {
+    width: 275px;
+    height: 17px;
+    text-transform: uppercase;
+    color: #ffff;
+        .logo_bold {
+            font-weight: bold;
+        }
+}
+@mixin name_block {
+    display: block;
+    text-align: center;
+    margin-bottom: 30px;
+    padding-top: 120px;
+    font-size: 24px;
+}
+.conteiner_header_bg {
+    background-color: #5f6d92;
+    width: 100%;
+    padding: 15px 0;
+    .conteiner_header_content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        width: 1200px;
+        margin: 0 auto;
+        color: #ffff;
+        justify-content: space-around;
+        .logo {
+            @include logo;
+        }
+        .search {
+            width: 375px;
+            height: 40px;
+            border-radius: 3px;
+            border: 0;
+            padding-left: 10px;
+        }
+        .lang {
+            width: 175px;
+            height: 15px;
+            .lang_uk, .lang_en, .lang_ru {
+                display: inline-block;
+                cursor: pointer;
+                &::after {
+                    content: '|';
+                    padding-left: 5px;
+                }
+            }
+            .lang_ru {
+                cursor: pointer;
+                &::after {
+                    content: '';
+                }
+            }
+        }
+        .log {
+            width: 175px;
+            height: 18px;
+            color: #ffff;
+            .fa-user {
+                margin-right: 10px;
+                
+            }
+        }
+        .shopping {
+            position: relative;
+            .fa-shopping-cart {
+                width: 30px;
+                height: 30px;
+                font-size: 30px;
+                cursor: pointer;
+            }
+            .shop_num {
+                width: 20px;
+                height: 20px;
+                background-color: #ffff;
+                border-radius: 50%;
+                position: absolute;
+                top: -10px;
+                right: -10px;
+                color: black;
+                border: 1px solid rgb(43, 0, 255);
+                text-align: center;
+            }
+        }
+    }
+    
+}
+.nav {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid grey;
+    background-color: #ffff;
+    padding-top: 10px;
+    
+    ul {
+        width: 1200px;
+        margin: 0 auto;
+    }
+    ul > li {
+        display: inline-block;
+        padding: 20px 10px;
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    .shop {
+        .fa-chevron-down {
+            margin-left: 10px;
+        }
+        &:hover .fa-chevron-down {
+            transform: rotate(180deg);
+            transition: 1s ease all;
+        }
+        &:hover ~ .hover_menu_conteiner {
+            transition: 1s ease all;
+            max-height: 450px;
+            
+        }
+    }
+    .hover_menu_conteiner {
+        z-index: 2;
+        text-transform: uppercase;
+        position: absolute;
+        top: 60px;
+        width: 1200px;
+        margin: 0 auto;
+        left: 0 ;
+        transition: 0.3s ease all;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background-color: #ffff;
+        .block {
+            width: 1200px;
+            margin: 0 auto;
+            top: 40px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            .hover_menu_content {
+                width: 375px;
+                margin-right: 100px;
+                a {
+                    display: block;
+                    padding-left: 10px;
+                    font-size: 18px;
+                    margin-bottom: 20px;
+                }
+            }
+            .product {
+                margin: 0;
+                display: flex;
+                .product_item {
+                    width: 235px;
+                    margin-right: 20px; 
+                    cursor: pointer;
+                    .name_product {
+                        text-align: center;
+                        vertical-align: bottom;
+                        margin-top: 300px;
+                        margin-bottom: 20px;
+                    }
+                    .price {
+                        text-align: center;
+                        margin-bottom: 20px;
+                    }
+                }
+                .promo_item_1 {
+                    background-image: url(../img/watch/apple-watch-series-6-40mm-product-red-aluminium-case-with-product-red-sport-band-desktop-detail-2-Format-488.png);
+                    background-size: 70%;
+                    background-position: 30px 50px;
+                    background-repeat: no-repeat;
+                    margin-bottom: 20px;
+                    &:hover {
+                        background-image: url(../img/watch/apple_watch_m00m3_1.png);
+                        box-shadow: -1px 1px 14px 3px #bababa;
+                    }
+                }
+                .promo_item_2 {
+                    background-image: url(../img/watch/wnike.jpg);
+                    background-size: 70%;
+                    background-position: 30px 50px;
+                    background-repeat: no-repeat;
+                    margin-bottom: 20px;
+                    &:hover {
+                        background-image: url(../img/watch/wnike2.jpg);
+                        box-shadow: -1px 1px 14px 3px #bababa;
+                    }
+                }
+                .promo_item_3 {
+                    background-image: url(../img/watch/blue2.jpeg);
+                    background-size: 70%;
+                    background-position: 30px 50px;
+                    background-repeat: no-repeat;
+                    margin-bottom: 20px;
+                    &:hover {
+                        background-image: url(../img/watch/blue1.jpg);
+                        box-shadow: -1px 1px 14px 3px #bababa;
+                        // background-size: 50%;
+                    }
+                }
+                .promo_item_4 {
+                    background-image: url(../img/watch/amazifft.jpg);
+                    background-size: 70%;
+                    background-position: 30px 50px;
+                    background-repeat: no-repeat;
+                    margin-bottom: 20px;
+                    &:hover {
+                        background-image: url(../img/watch/amazifft2.jpg);
+                        box-shadow: -1px 1px 14px 3px #bababa;
+                        // background-size: 50%;
+                    }
+                }
+        
+                
+            }
+        
+        }
+        &:hover {
+            max-height: 450px;
+        }
+    }
+   
+    .burg_menu {
+        position: fixed;
+        height: 100%;
+        background-color: #ffff;
+        width: 35%;
+        top: 0;
+        left: -100%;
+        z-index: 1;
+        transition: ease 1s;
+        
+        .name_menu_burg, .lang_menu_burg {
+            padding: 20px;
+            width: 100%;
+            height: 10%;
+            background-color: rgb(238, 238, 238);
+            margin: 0;
+            
+        }
+        ul {
+            width: 100%;
+        }
+        ul > li {
+            width: 100%;
+            display: block;
+            border-bottom: 1px solid rgb(239, 239, 239);
+        }
+    }
+    .checkbox3:checked ~ .burg_menu {
+        left: 0;
+        transition: ease 1s;
+    }
+    .hamburger {
+        display: none;
+        margin-top: 0;
+    }
+}
+.slider {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+    position: relative;
+    .labelsl1, .labelsl2 {
+        background-color: transparent;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        border: 2px solid rgb(43, 0, 255);
+        display: inline-block;
+        cursor: pointer;
+    }
+    .block_label {
+        width: 50px;
+        left: calc(50% - 25px);
+        bottom: 10px;
+        z-index: 5;
+        position: absolute;
+    }
+    
+    .slide1 {
+        background-image: url(../img/slider/slide-2.jpg);
+        background-size: cover;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: -100%;
+        top: 0;
+        transition: 1s ease;
+    }
+    .slide2 {
+        background-image: url(../img/slider/slide-1.jpg);
+        background-size: cover;
+        background-position: center;
+        width: 100%;
+        background-repeat: no-repeat;
+        height: 500px;
+        position: absolute;
+        left: 100%;
+        top: 0;
+        transition: 1s ease;
+    }
+    .slmain1:checked ~ .slide1 {
+        left: 0;
+    }
+    .slmain1:checked ~ .block_label .labelsl1 {
+        background-color: rgb(43, 0, 255);
+    }
+    .slmain2:checked ~ .block_label .labelsl2 {
+        background-color: rgb(43, 0, 255);
+    }
+    .slmain2:checked ~ .slide2 {
+        left: 0;
+    }
+    // &:hover .slide1 {
+    //     left: -100%;
+    // }
+    // &:hover .slide2 {
+    //     left: 0;
+    // }
+}
+.conteiner_category {
+    width: 100%;
+    background-color: #f5f5f5;
+    .name_block {
+        @include name_block;
+    }
+    .category {
+        margin: 0 auto;
+        width: 1200px;
+        display: flex;
+        justify-content: space-around;
+        padding-bottom: 100px;
+        
+        .cat_blocks {
+            overflow: hidden;
+            width: 375px;
+            height: 375px;
+            transition: ease 1s;
+            background-color: #ffff;
+            cursor: pointer;
+            &:hover {
+                background-position: 25px 10px;
+                transition: ease 1s;
+            }
+            &:hover  h3 {
+                color: transparent;
+                transition: ease 1s;
+            }
+            h3 {
+                text-align: center;
+                margin-top: 20px;
+                transition: ease 1s;
+            }
+        }
+        .iphone {
+            background-image: url(../img/cat_block/mi_10.png);
+            background-size: contain;
+            background-position: 25px 120px;
+            background-repeat: no-repeat;
+        }
+        .watch {
+            background-image: url(../img/cat_block/umnye-chasy-xiaomi-amazfit-gts-rose-pink.jpg);
+            background-size: contain;
+            background-position: 5px 155px;
+            background-repeat: no-repeat;
+            &:hover {
+                background-position: 5px 10px;
+                transition: ease 1s;
+            }
+        }
+        .airpods {
+            background-image: url(../img/cat_block/894debbcd0553d61bf5e7419bbec1bc2_424_424_75.jpg);
+            background-size: contain;
+            background-position: 0 120px;
+            background-repeat: no-repeat;
+            &:hover {
+                background-position: 0 20px;
+                transition: ease 1s;
+            }
+        }
+    }
+}
+.sales_block {
+    background-image: url(../img/sales.block/tekhnika-Apple.jpg);
+    width: 100%;
+    padding-top: 230px;
+    padding-bottom: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    .name_block {
+        color: #ffff;
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+    .saw_btn {
+        background-color: #ffff;
+        border: 0;
+        width: 150px;
+        height: 30px;
+        display: block;
+        margin: 0 auto;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+}
+.catalog {
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+    .katalog_name {
+        @include name_block;
+    }
+    .katalog_slider {
+        width: 1200px;
+        height: 410px;
+        // border: 2px solid black;
+        position: relative;
+        .slide_first {
+            transition: 1s ease;
+            position: absolute;
+            width: 1200px;
+            height: 400px;
+            top: 0;
+            left: -100%;
+            display: flex;
+            justify-content: space-around;
+            .katalog_item {
+                cursor: pointer;
+                width: 20%;
+                height: 85%;
+                display: inline-block;
+                background-image: url(../img/watch/pink.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: top;
+                background-color: #ffff;
+                &:nth-child(1) {
+                    background-image: url(../img/catalog/447e11e7961511eb8aa2ac162d717607_447e11e8961511eb8aa2ac162d717607-450x600.jpg);
+                }
+                &:nth-child(2) {
+                    background-image: url(../img/catalog/w.jpg);
+                }
+                &:nth-child(3) {
+                    background-image: url(../img/catalog/time.jpg);
+                }
+                &:nth-child(4) {
+                    background-image: url(../img/catalog/korona.jpg);
+                }
+                
+
+                .kat_name_item {
+                    margin-top: 110%;
+                    text-align: center;
+                }
+                .price_kat_item {
+                    text-align: center;
+                    margin-top: 20px;
+                }
+                &:hover {
+                    height: 100%;
+                    box-shadow: -1px 1px 14px 3px #bababa;
+                }
+            }
+        }
+        .slide_twice {
+            transition: 1s ease;
+            position: absolute;
+            width: 1200px;
+            height: 400px;
+            top: 0;
+            left: 100%;
+            display: flex;
+            justify-content: space-around;
+            .katalog_item {
+                cursor: pointer;
+                background-color: #ffff;
+                width: 20%;
+                height: 85%;
+                display: inline-block;
+                background-image: url(../img/watch/pink.png);
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: top;
+                &:nth-child(1) {
+                    background-image: url(../img/catalog/miband.jpg);
+                }
+                &:nth-child(2) {
+                    background-image: url(../img/catalog/watch.jpg);
+                }
+                &:nth-child(3) {
+                    background-image: url(../img/catalog/note8.png);
+                }
+                &:nth-child(4) {
+                    background-image: url(../img/catalog/bank.jpg);
+                }
+                .kat_name_item {
+                    margin-top: 110%;
+                    text-align: center;
+                }
+                .price_kat_item {
+                    text-align: center;
+                    margin-top: 20px;
+                }
+                &:hover {
+                    height: 100%;
+                    box-shadow: -1px 1px 14px 3px #bababa;
+                }
+            }
+        }
+        .katalog_arrow_left {
+            font-size: 30px;
+            position: absolute;
+            top: calc(50% - 15px);
+            right: 0;
+            z-index: 1;
+            cursor: pointer;
+        }
+        .katalog_arrow_right {
+            font-size: 30px;
+            position: absolute;
+            top: calc(50% - 15px);
+            z-index: 1;
+            cursor: pointer;
+            
+        }
+        .radio_cat1:checked ~ .slide_first{
+            left: 0;
+            transition: 1s ease;
+        }
+        .radio_cat2:checked ~ .slide_twice{
+            left: 0;
+            transition: 1s ease;
+        }
+        .radio_cat1, .radio_cat2 {
+            display: none;
+        }
+
+    }
+
+}
+.blog_conteiner {
+    width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 100px;
+    .block_name {
+        @include name_block;
+    }
+    .blog_blocks {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        .blog_block {
+            background-color: #ffff;
+            width: 30%;
+            height: 400px;
+            .promo_foto_blog {
+                width: 100%;
+                height: 70%;
+            }
+            .blog_camera {
+                background-image: url(../img/blog/selfie.jpg);
+                background-size: cover;
+            }
+            .blog_music {
+                background-image: url(../img/blog/online_music.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+            .blog_health {
+                background-image: url(../img/blog/health.png);
+                background-size: cover;
+            }
+            .blog_info {
+                padding-left: 15px;
+                padding-top: 15px;
+                .blog_info_name {
+                    font-size: 18px;
+                    font-weight: normal;
+                    margin-bottom: 15px;
+                }
+                .blog_info_paragraf {
+                    color: grey;
+                    margin-bottom: 15px;
+                    font-size: 14px;
+                }
+                .blog_more {
+                    color: grey;
+                    position: relative;
+                    .fas {
+                        position: absolute;
+                        right: -40%;
+                        
+                    }
+                }
+            }
+        }
+    }
+}
+.footer {
+    border-top: 1px solid grey;
+    padding-top: 20px;
+    .logo {
+        @include logo;
+        color: #5f6d92;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .logo_foot,.tel,.mail,.soc_text,.pay_text,.year {
+        text-align: center;
+        display: block;
+        margin-bottom: 10px;
+    }
+    .soc {
+        width: 240px;
+        margin: 0 auto 20px auto;
+        a {
+            color: #5f6d92;
+        }
+        .fab {
+            font-size: 40px;
+        }
+    }
+    .pay_card {
+        width: 95px;
+        color: #5f6d92;
+        margin: 0 auto 20px auto;
+        .fab {
+            font-size: 40px;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width: 1220px) {
+    .conteiner_header_bg {
+        .conteiner_header_content {
+            width: 960px;
+            .logo {
+                width: 220px;
+            }
+            .search {
+                width: 300px;
+            }
+            .lang {
+                width: 140px;
+            }
+            .log {
+                width: 140px;
+            }
+        }
+    }
+    .conteiner_category {
+        .category {
+            width: 960px;
+            .cat_blocks {
+                width: 32%;
+                height: 300px;
+            }
+            
+        }
+    }
+    .catalog {
+        width: 960px;
+        .katalog_slider {
+            width: 960px;
+            .slide_first {
+                width: 960px;
+            }
+            .slide_twice {
+                width: 960px
+            }
+        }
+    }
+    .blog_conteiner {
+        width: 960px;
+    }
+    
+}
+@media (max-width: 980px) {
+    .conteiner_header_bg {
+        .conteiner_header_content {
+            width: 720px;
+            .logo {
+                width: 225px;
+            }
+            .search {
+                width: 225px;
+            }
+            .lang {
+                display: none;
+            }
+            .log {
+                width: 105px;
+            }
+        }
+    }
+    .nav {
+        .menu_list_big   {
+            display: none;
+        }
+        .hamburger {
+            display: block;
+        }
+        // .burg_menu {
+        //     left: 0;
+        //     transition: ease 1s;
+        // }
+    }
+    .conteiner_category {
+        .category {
+            width: 720px;
+            .cat_blocks {
+                width: 48%;
+            }
+            .airpods {
+                display: none;
+            }
+        }
+    }
+    .catalog {
+        width: 720px;
+        .katalog_slider {
+            width: 720px;
+            .slide_first {
+                width: 720px;
+                .katalog_item {
+                    width: 30%;
+                }
+                .katalog_item:last-of-type {
+                    display: none;
+                }
+            }
+            .slide_twice {
+                width: 720px;
+                .katalog_item {
+                    width: 30%;
+                }
+                .katalog_item:last-of-type {
+                    display: none;
+                }
+            }
+        }
+    }
+    .blog_conteiner {
+        width: 720px;
+        margin: 0 auto;
+        .blog_blocks {
+            .blog_block {
+                width: 30%;
+            }
+        }
+        
+    }
+    
+}
+@media (max-width: 740px) {
+    .conteiner_header_bg {
+        .conteiner_header_content {
+            width: 480px;
+            .logo {
+                width: 150px;
+            }
+            .search {
+                display: none;
+            }
+            .lang {
+                display: none;
+            }
+            .log {
+                width: 150px;
+            }
+        }
+    }
+    .conteiner_category {
+        .category {
+            width: 480px;
+            flex-wrap: wrap;
+            .cat_blocks {
+                width: 80%;
+                margin-top: 20px;
+            }
+            .iphone {
+                background-position: 70px 120px;
+                &:hover {
+                    background-position: 70px 10px;
+                }
+            }
+            .airpods {
+                display: block;
+                background-position: 40px 120px;
+                &:hover {
+                    background-position: 40px 20px;
+                    transition: ease 1s;
+                }
+            }
+        }
+    }
+    .catalog {
+        width: 480px;
+        .katalog_slider {
+            width: 480px;
+            .slide_first {
+                width: 480px;
+                .katalog_item {
+                    width: 45%;
+                }
+                .katalog_item:nth-child(3n) {
+                    display: none;
+                }
+            }
+            .slide_twice {
+                width: 480px;
+                .katalog_item {
+                    width: 45%;
+                }
+                .katalog_item:nth-child(3n) {
+                    display: none;
+                }
+            }
+        }
+    }
+    .blog_conteiner {
+        width: 100%;
+        margin: 0 auto;
+        .blog_blocks {
+            display: inline-block   ;
+            margin: 30px auto 0 auto;
+            .blog_block {
+                width: 300px;
+            }
+            .blog_block:last-of-type {
+                width: 300px;
+            }
+        }
+        
+    }
+    .blog_conteiner {
+        
+        .blog_blocks {
+            .blog_block {
+                margin: 30px auto 0 auto;
+            }
+        }
+    }
+    
+}
+@media (max-width: 500px) {
+    .conteiner_header_bg {
+        .conteiner_header_content {
+            width: 90%;
+            margin: 0 auto;
+            .logo {
+                width: 100%;
+                display: block;
+                text-align: center;
+            }
+            .search {
+                display: none;
+            }
+            .lang {
+                display: none;
+            }
+            .log {
+                width: 280px;
+            }
+        }
+    }
+    .conteiner_category {
+        .category {
+            width: 100%;
+            flex-wrap: wrap;
+            .cat_blocks {
+                width: 80%;
+                margin-top: 20px;
+            }
+            .iphone {
+                background-position: 70px 120px;
+                &:hover {
+                    background-position: 70px 10px;
+                }
+            }
+            .airpods {
+                display: block;
+                background-position: 40px 120px;
+                &:hover {
+                    background-position: 40px 20px;
+                    transition: ease 1s;
+                }
+            }
+        }
+    }
+    .catalog {
+        width: 100%;
+        .katalog_slider {
+            width: 100%;
+            .slide_first {
+                width: 100%;
+                .katalog_item {
+                    width: 50%;
+                }
+                .katalog_item:nth-child(2n) {
+                    display: none;
+                }
+            }
+            .slide_twice {
+                width: 100%;
+                .katalog_item {
+                    width: 50%;
+                }
+                .katalog_item:nth-child(2n) {
+                    display: none;
+                }
+            }
+        }
+    }   
+}
+
+
+
+
+
+
+
+
+
+
+
+
